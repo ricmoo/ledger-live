@@ -93,9 +93,11 @@ export const withDevice =
 
       let unsubscribed;
       let sub;
+      // const previousJobPromise ? existingJobPromise ?
       const deviceQueue = deviceQueues[deviceId] || Promise.resolve();
 
-      const finalize = (transport, cleanups) => {
+      const finalize = (transport: Transport, cleanups: Array<() => void>) => {
+        console.log(`🧠 finalize`);
         setAllowAutoDisconnect(transport, deviceId, true);
         return close(transport, deviceId)
           .catch(() => {})
@@ -105,9 +107,12 @@ export const withDevice =
       };
 
       // When we'll finish all the current job, we'll call finish
+      // notifyJobCompleted ? resolveCurrentJob
       let resolveQueuedDevice;
 
       // This new promise is the next exec queue
+      // But is it a queue ? it's just to notify when the latest/previous job ended
+      // Blocking any future job on this device
       deviceQueues[deviceId] = new Promise(resolve => {
         resolveQueuedDevice = resolve;
       });
@@ -119,6 +124,7 @@ export const withDevice =
       deviceQueue
         .then(() => open(deviceId)) // open the transport
         .then(async transport => {
+          console.log(`🐬 ${nonce}: got a transport`);
           log("withDevice", `${nonce}: got a transport`);
 
           if (unsubscribed) {
@@ -133,6 +139,7 @@ export const withDevice =
             await transport.send(0, 0, 0, 0).catch(() => {});
           }
 
+          console.log(`🐬 ${nonce}: everything ok, returning the transport`);
           return transport;
         })
         // This catch is here only for errors that might happen at open or at clean up of the transport before doing the job
@@ -147,6 +154,7 @@ export const withDevice =
         })
         // Executes the job
         .then(transport => {
+          console.log(`🦀 ${nonce}: executing job`);
           if (!transport) return;
 
           if (unsubscribed) {
@@ -155,18 +163,23 @@ export const withDevice =
           }
 
           log("withDevice", `${nonce}: Starting job`);
+          console.log(`🦀 ${nonce}: starting the job !`);
           sub = job(transport)
             .pipe(
               catchError(initialErrorRemapping),
               catchError(errorRemapping), // close the transport and clean up everything
               transportFinally(() => {
+                console.log(`🦀 ${nonce}: job fully completed ✅ !`);
                 log("withDevice", `${nonce}: job fully completed`);
                 return finalize(transport, [resolveQueuedDevice]);
               }),
             )
             .subscribe(o);
         })
-        .catch(error => o.error(error));
+        .catch(error => {
+          console.log(`🦀 ${nonce}: job error ❌ while executing: ${error}`);
+          o.error(error);
+        });
 
       // Returns function to unsubscribe from the job if we don't need it anymore.
       // This will prevent us from executing the job unnecessarily later on
