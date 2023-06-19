@@ -76,6 +76,7 @@ setSupportedCurrencies([
   "moonriver",
   "velas_evm",
   "syscoin",
+  "injective",
 ]);
 
 for (const k in process.env) setEnvUnsafe(k as EnvName, process.env[k]);

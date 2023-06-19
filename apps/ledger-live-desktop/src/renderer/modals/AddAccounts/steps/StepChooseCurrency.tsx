@@ -49,12 +49,14 @@ const StepChooseCurrency = ({ currency, setCurrency }: StepProps) => {
   const moonriver = useFeature("currencyMoonriver");
   const velasEvm = useFeature("currencyVelasEvm");
   const syscoin = useFeature("currencySyscoin");
+  const injective = useFeature("currencyInjective");
 
   const featureFlaggedCurrencies = useMemo(
     () => ({
       axelar,
       onomy,
       quicksilver,
+      injective,
       persistence,
       avalanche_c_chain: avaxCChain,
       optimism,
@@ -82,6 +84,7 @@ const StepChooseCurrency = ({ currency, setCurrency }: StepProps) => {
       rsk,
       bittorrent,
       kavaEvm,
+      injective,
       evmosEvm,
       energyWeb,
       astar,

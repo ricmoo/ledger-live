@@ -20,6 +20,9 @@ export const defaultFeatures: DefaultFeatures = {
   currencyAvalancheCChain: {
     enabled: false,
   },
+  currencyInjective: {
+    enabled: true,
+  },
   currencyOptimism: {
     enabled: false,
   },

@@ -68,4 +68,6 @@ setSupportedCurrencies([
   "moonriver",
   "velas_evm",
   "syscoin",
+  "nyx",
+  "injective",
 ]);

@@ -71,6 +71,7 @@ export default function AddAccountsSelectCrypto({ navigation, route }: Props) {
   const moonriver = useFeature("currencyMoonriver");
   const velasEvm = useFeature("currencyVelasEvm");
   const syscoin = useFeature("currencySyscoin");
+  const injective = useFeature("currencyInjective");
 
   const featureFlaggedCurrencies = useMemo(
     () => ({
@@ -85,6 +86,7 @@ export default function AddAccountsSelectCrypto({ navigation, route }: Props) {
       arbitrum_goerli: arbitrumGoerli,
       rsk,
       bittorrent,
+      injective,
       kava_evm: kavaEvm,
       evmos_evm: evmosEvm,
       energy_web: energyWeb,
@@ -107,6 +109,7 @@ export default function AddAccountsSelectCrypto({ navigation, route }: Props) {
       evmosEvm,
       energyWeb,
       astar,
+      injective,
       metis,
       boba,
       moonriver,
