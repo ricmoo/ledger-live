@@ -95,6 +95,9 @@ export const defaultFeatures = {
   currencyDesmos: {
     enabled: false,
   },
+  currencyKlaytn: {
+    enabled: false,
+  },
   deviceInitialApps: {
     enabled: false,
     params: {

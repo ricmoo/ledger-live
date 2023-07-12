@@ -66,7 +66,10 @@ export const getLastCoinOperations = async (
     return [];
   }
 
-  let url = `${apiDomain}/api?module=account&action=txlist&address=${address}&tag=latest&page=1&sort=desc`;
+  let url = `${apiDomain}/api${
+    /** @TODO REMOVE THIS BEFORE MERGE ONCE KLAYTN FIXED ITS EXPLORER ENDPOINT */
+    currency.id === "klaytn" ? "/" : ""
+  }?module=account&action=txlist&address=${address}&tag=latest&page=1&sort=desc`;
   if (fromBlock) {
     url += `&startBlock=${fromBlock}`;
   }
@@ -97,7 +100,10 @@ export const getLastTokenOperations = async (
     return [];
   }
 
-  let url = `${apiDomain}/api?module=account&action=tokentx&address=${address}&tag=latest&page=1&sort=desc`;
+  let url = `${apiDomain}/api${
+    /** @TODO REMOVE THIS BEFORE MERGE ONCE KLAYTN FIXED ITS EXPLORER ENDPOINT */
+    currency.id === "klaytn" ? "/" : ""
+  }?module=account&action=tokentx&address=${address}&tag=latest&page=1&sort=desc`;
   if (fromBlock) {
     url += `&startBlock=${fromBlock}`;
   }
@@ -149,7 +155,10 @@ export const getLastERC721Operations = async (
     return [];
   }
 
-  let url = `${apiDomain}/api?module=account&action=tokennfttx&address=${address}&tag=latest&page=1&sort=desc`;
+  let url = `${apiDomain}/api${
+    /** @TODO REMOVE THIS BEFORE MERGE ONCE KLAYTN FIXED ITS EXPLORER ENDPOINT */
+    currency.id === "klaytn" ? "/" : ""
+  }?module=account&action=tokennfttx&address=${address}&tag=latest&page=1&sort=desc`;
   if (fromBlock) {
     url += `&startBlock=${fromBlock}`;
   }
@@ -201,7 +210,10 @@ export const getLastERC1155Operations = async (
     return [];
   }
 
-  let url = `${apiDomain}/api?module=account&action=token1155tx&address=${address}&tag=latest&page=1&sort=desc`;
+  let url = `${apiDomain}/api${
+    /** @TODO REMOVE THIS BEFORE MERGE ONCE KLAYTN FIXED ITS EXPLORER ENDPOINT */
+    currency.id === "klaytn" ? "/" : ""
+  }?module=account&action=token1155tx&address=${address}&tag=latest&page=1&sort=desc`;
   if (fromBlock) {
     url += `&startBlock=${fromBlock}`;
   }
