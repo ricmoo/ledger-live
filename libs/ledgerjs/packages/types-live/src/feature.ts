@@ -38,6 +38,7 @@ export type FeatureId =
   | "currencyQuicksilver"
   | "currencyInternetComputer"
   | "currencyPolygonZkEvm"
+  | "currencyBaseGoerli"
   | "currencyKlaytn"
   | "ptxSmartRoutingMobile"
   | "mockFeature"

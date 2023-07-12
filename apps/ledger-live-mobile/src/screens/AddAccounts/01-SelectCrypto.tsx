@@ -79,6 +79,7 @@ export default function AddAccountsSelectCrypto({ navigation, route }: Props) {
   const syscoin = useFeature("currencySyscoin");
   const internetComputer = useFeature("currencyInternetComputer");
   const polygon_zk_evm = useFeature("currencyPolygonZkEvm");
+  const base_goerli = useFeature("currencyBaseGoerli");
   const klaytn = useFeature("currencyKlaytn");
 
   const featureFlaggedCurrencies = useMemo(
@@ -110,6 +111,7 @@ export default function AddAccountsSelectCrypto({ navigation, route }: Props) {
       syscoin,
       internet_computer: internetComputer,
       polygonZkEvm: polygon_zk_evm,
+      baseGoerli: base_goerli,
       klaytn,
     }),
     [
@@ -140,6 +142,7 @@ export default function AddAccountsSelectCrypto({ navigation, route }: Props) {
       syscoin,
       internetComputer,
       polygon_zk_evm,
+      base_goerli,
       klaytn,
     ],
   );

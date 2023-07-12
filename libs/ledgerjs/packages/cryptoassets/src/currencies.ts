@@ -4310,6 +4310,31 @@ export const cryptocurrenciesById: Record<CryptoCurrencyId, CryptoCurrency> = {
       },
     ],
   },
+  base_goerli: {
+    type: "CryptoCurrency",
+    id: "base_goerli",
+    coinType: CoinType.ETH,
+    name: "Base Goerli",
+    managerAppName: "Ethereum",
+    ticker: "ETH",
+    scheme: "base_goerli",
+    color: "#0052FF",
+    family: "evm",
+    units: ethereumUnits("ETH", "ETH"),
+    disableCountervalue: true,
+    ethereumLikeInfo: {
+      chainId: 84531,
+      rpc: "https://goerli.base.org",
+      explorer: { type: "etherscan", uri: "https://goerli.basescan.org" },
+    },
+    explorerViews: [
+      {
+        tx: "https://goerli.basescan.org/tx/$hash",
+        address: "https://goerli.basescan.org/address/$address",
+        token: "https://goerli.basescan.org/token/$contractAddress?a=$address",
+      },
+    ],
+  },
   klaytn: {
     type: "CryptoCurrency",
     id: "klaytn",

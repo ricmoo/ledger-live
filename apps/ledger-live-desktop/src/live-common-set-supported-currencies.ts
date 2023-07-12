@@ -77,5 +77,6 @@ setSupportedCurrencies([
   "polygon_as_evm_test_only",
   "klaytn",
   "polygon_zk_evm",
+  "base_goerli",
   "stacks",
 ]);

@@ -152,7 +152,9 @@ export type CryptoCurrencyId =
   | "velas_evm"
   | "syscoin"
   | "internet_computer"
-  | "klaytn";
+  | "klaytn"
+  | "polygon_zk_evm"
+  | "base_goerli";
 
 /**
  *

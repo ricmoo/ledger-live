@@ -98,6 +98,9 @@ export const defaultFeatures = {
   currencyPolygonZkEvm: {
     enabled: false,
   },
+  currencyBaseGoerli: {
+    enabled: false,
+  },
   currencyKlaytn: {
     enabled: false,
   },
