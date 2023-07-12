@@ -95,6 +95,9 @@ export const defaultFeatures = {
   currencyDesmos: {
     enabled: false,
   },
+  currencyPolygonZkEvm: {
+    enabled: false,
+  },
   currencyKlaytn: {
     enabled: false,
   },

@@ -55,6 +55,7 @@ const StepChooseCurrency = ({ currency, setCurrency }: StepProps) => {
   const velasEvm = useFeature("currencyVelasEvm");
   const syscoin = useFeature("currencySyscoin");
   const internetComputer = useFeature("currencyInternetComputer");
+  const polygon_zk_evm = useFeature("currencyPolygonZkEvm");
   const klaytn = useFeature("currencyKlaytn");
 
   const featureFlaggedCurrencies = useMemo(
@@ -85,6 +86,7 @@ const StepChooseCurrency = ({ currency, setCurrency }: StepProps) => {
       velas_evm: velasEvm,
       syscoin,
       internet_computer: internetComputer,
+      polygonZkEvm: polygon_zk_evm,
       klaytn,
     }),
     [
@@ -114,6 +116,7 @@ const StepChooseCurrency = ({ currency, setCurrency }: StepProps) => {
       velasEvm,
       syscoin,
       internetComputer,
+      polygon_zk_evm,
       klaytn,
     ],
   );
