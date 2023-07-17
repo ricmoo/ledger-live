@@ -2,7 +2,7 @@ import React, { useCallback, useState } from "react";
 import { Linking } from "react-native";
 import { useTranslation } from "react-i18next";
 import { useNavigation, useRoute } from "@react-navigation/native";
-import { Box, Flex, Icons, Text } from "@ledgerhq/native-ui";
+import { Box, Flex, Icons, ScrollListContainer, Text } from "@ledgerhq/native-ui";
 import { useFeature } from "@ledgerhq/live-common/featureFlags/index";
 import { DeviceModelId, getDeviceModel } from "@ledgerhq/devices";
 import { useTheme } from "styled-components/native";
@@ -83,7 +83,7 @@ const OnboardingStepUseCaseSelection = () => {
   }, [deviceModelId, navigation, servicesConfig?.params.deeplink]);
 
   return (
-    <OnboardingView hasBackButton>
+    <ScrollListContainer flex={1} mx={6} mt={3}>
       <TrackScreen category="Onboarding" name="setup new options" />
       <Text variant="h4" fontWeight="semiBold" mb={7}>
         {t("onboarding.stepUseCase.firstUse.section", {
@@ -173,7 +173,7 @@ const OnboardingStepUseCaseSelection = () => {
           </Button>
         </Flex>
       </QueuedDrawer>
-    </OnboardingView>
+    </ScrollListContainer>
   );
 };
 
