@@ -1,4 +1,4 @@
-lockfileVersion: '6.0'
+lockfileVersion: '6.1'
 
 settings:
   autoInstallPeers: false
@@ -1112,7 +1112,7 @@ importers:
         version: 6.6.7
       rxjs-compat:
         specifier: ^6.6.6
-        version: 6.6.7(rxjs@6.6.7)
+        version: 6.6.7(rxjs@7.8.0)
       rxjs7:
         specifier: npm:rxjs@7.8.0
         version: /rxjs@7.8.0
@@ -2215,7 +2215,7 @@ importers:
         version: 6.6.7
       rxjs-compat:
         specifier: ^6.6.7
-        version: 6.6.7(rxjs@6.6.7)
+        version: 6.6.7(rxjs@7.8.0)
       rxjs7:
         specifier: npm:rxjs@7.8.0
         version: /rxjs@7.8.0
@@ -4076,6 +4076,9 @@ importers:
       axios:
         specifier: 0.26.1
         version: 0.26.1
+      axios-retry:
+        specifier: ^3.2.5
+        version: 3.2.5
       invariant:
         specifier: ^2.2.2
         version: 2.2.4
@@ -51783,7 +51786,7 @@ packages:
     dependencies:
       aproba: 1.2.0
 
-  /rxjs-compat@6.6.7(rxjs@6.6.7):
+  /rxjs-compat@6.6.7(rxjs@7.8.0):
     resolution: {integrity: sha512-szN4fK+TqBPOFBcBcsR0g2cmTTUF/vaFEOZNuSdfU8/pGFnNmmn2u8SystYXG1QMrjOPBc6XTKHMVfENDf6hHw==}
     peerDependencies:
       rxjs: '*'
@@ -51791,7 +51794,7 @@ packages:
       rxjs:
         optional: true
     dependencies:
-      rxjs: 6.6.7
+      rxjs: 7.8.0
     dev: false
 
   /rxjs@6.6.7:
