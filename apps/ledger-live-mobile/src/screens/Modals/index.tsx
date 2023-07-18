@@ -3,6 +3,7 @@ import { NavigationState, useNavigation } from "@react-navigation/native";
 import { FeatureToggle, useFeature } from "@ledgerhq/live-common/featureFlags/index";
 import PushNotificationsModal from "../PushNotificationsModal";
 import RatingsModal from "../RatingsModal";
+import NpsRatingsModal from "../NpsRatingsModal";
 import useRatings from "../../logic/ratings";
 import useNotifications from "../../logic/notifications";
 import DebugAppLevelDrawer from "../../components/DebugAppLevelDrawer";
@@ -67,6 +68,9 @@ const Modals = () => {
       </FeatureToggle>
       <FeatureToggle feature="ratingsPrompt">
         <RatingsModal />
+      </FeatureToggle>
+      <FeatureToggle feature="npsRatingsPrompt">
+        <NpsRatingsModal />
       </FeatureToggle>
       <DebugAppLevelDrawer />
     </>
