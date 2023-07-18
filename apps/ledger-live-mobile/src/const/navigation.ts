@@ -338,9 +338,6 @@ export enum ScreenName {
   // Ethereum
   EthereumCustomFees = "EthereumCustomFees",
   EthereumEditGasLimit = "EthereumEditGasLimit",
-  // EVM
-  EVMCustomFees = "EVMCustomFees",
-  EVMEditGasLimit = "EVMEditGasLimit",
 
   // Evm
   EvmEditGasLimit = "EvmEditGasLimit",
