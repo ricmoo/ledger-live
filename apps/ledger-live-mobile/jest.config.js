@@ -40,7 +40,7 @@ module.exports = {
   coverageDirectory: "<rootDir>/coverage",
   moduleNameMapper: {
     "^@ledgerhq/coin-framework(.*)$": "<rootDir>/../../libs/coin-framework/lib$1.js",
-    "^@ledgerhq/icons-ui/native(.*)$": "<rootDir>/../../libs/ui/packages/icons/native/$1",
+    "^@ledgerhq/icons-ui/nativeLegacy(.*)$": "<rootDir>/../../libs/ui/packages/icons/native/$1",
     "^@ledgerhq/crypto-icons-ui/native(.*)$":
       "<rootDir>/../../libs/ui/packages/crypto-icons/native/$1",
     "^@ledgerhq/native-ui(.*)$": "<rootDir>/../../libs/ui/packages/native/lib/$1",
