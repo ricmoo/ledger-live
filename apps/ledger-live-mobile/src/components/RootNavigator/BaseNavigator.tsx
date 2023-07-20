@@ -88,8 +88,9 @@ import {
   NavigationHeaderCloseButtonAdvanced,
 } from "../NavigationHeaderCloseButton";
 import { RedirectToRecoverStaxFlowScreen } from "../../screens/Protect/RedirectToRecoverStaxFlow";
-import { RootDrawer, RootDrawerProps } from "../RootDrawer";
+import { RootDrawer } from "../RootDrawer/RootDrawer";
 import EditTransactionNavigator from "../../families/ethereum/EditTransactionFlow/EditTransactionNavigator";
+import { DrawerProps } from "../RootDrawer/types";
 
 const Stack = createStackNavigator<BaseNavigatorStackParamList>();
 
@@ -98,7 +99,7 @@ export default function BaseNavigator() {
   const route = useRoute<
     RouteProp<{
       params: {
-        drawer?: RootDrawerProps;
+        drawer?: DrawerProps;
       };
     }>
   >();
